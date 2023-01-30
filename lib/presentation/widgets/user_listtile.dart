@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:test_layout/data/models/user.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:test_layout/logic/cubits/users_cubit.dart';
+
+import '../../data/models/user.dart';
+import '../../logic/cubits/users_cubit.dart';
 
 class UserListTile extends StatelessWidget {
   final int index;
@@ -14,7 +15,7 @@ class UserListTile extends StatelessWidget {
       leading: CircleAvatar(
         backgroundImage: NetworkImage(user.pictureLarge),
       ),
-      title: Text("${user.firstName} ${user.lastName}"),
+      title: Text("${user.name.first} ${user.name.last}"),
       subtitle:
           Text("Age: ${user.age}, Email: ${user.email}, Phone: ${user.phone}"),
       trailing: IconButton(

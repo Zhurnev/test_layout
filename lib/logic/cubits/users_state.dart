@@ -1,27 +1,13 @@
-import 'package:test_layout/data/models/user.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+import '../../data/models/user.dart';
+part 'users_state.freezed.dart';
 
-class UsersState {
-  bool isLoading;
-  List<User> savedUsers;
-  List<User> currentUsers;
-  Object? error;
-  UsersState({
-    this.isLoading = false,
-    this.savedUsers = const [],
-    this.currentUsers = const [],
-    this.error,
-  });
-  UsersState copyWith({
-    bool? isLoading,
-    List<User>? savedUsers,
-    List<User>? currentUsers,
+@freezed
+class UsersState with _$UsersState {
+  const factory UsersState({
+    @Default(false) isLoading,
+    @Default([]) List<User> savedUsers,
+    @Default([]) List<User> currentUsers,
     Object? error,
-  }) {
-    return UsersState(
-      isLoading: isLoading ?? this.isLoading,
-      savedUsers: savedUsers ?? this.savedUsers,
-      currentUsers: currentUsers ?? this.currentUsers,
-      error: error,
-    );
-  }
+  }) = _UsersState;
 }

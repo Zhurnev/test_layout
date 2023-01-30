@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:test_layout/logic/cubits/users_cubit.dart';
-import 'package:test_layout/logic/cubits/users_state.dart';
-import 'package:test_layout/presentation/widgets/user_listtile.dart';
+
+import '../../logic/cubits/users_cubit.dart';
+import '../../logic/cubits/users_state.dart';
+import '../widgets/user_listtile.dart';
 
 class SavedPage extends StatelessWidget {
   final String title;

@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:test_layout/logic/cubits/users_cubit.dart';
-import 'package:test_layout/presentation/pages/error_page.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:test_layout/presentation/router/app_router.dart';
-import 'package:test_layout/presentation/custom_theme.dart';
+
+import 'logic/cubits/users_cubit.dart';
+import 'presentation/custom_theme.dart';
+import 'presentation/pages/error_page.dart';
+import 'presentation/router/app_router.dart';
 
 void main() {
   ErrorWidget.builder =
-      (FlutterErrorDetails flutterErrorDetails) => const ErrorPage(
-            title: "Error Page",
-          );
+      (FlutterErrorDetails flutterErrorDetails) => const ErrorPage();
   runApp(RandomUserApp(
     appRouter: AppRouter(),
   ));

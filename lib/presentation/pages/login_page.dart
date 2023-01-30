@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:test_layout/constants/enums.dart';
-import 'package:test_layout/logic/cubits/users_cubit.dart';
+import '../../constants/enums.dart';
+import '../../logic/cubits/users_cubit.dart';
 
 class LoginPage extends StatefulWidget {
   final String title;

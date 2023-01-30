@@ -1,12 +1,12 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:test_layout/data/repositories/user_repository.dart';
+import '../../data/repositories/user_repository.dart';
 import 'users_state.dart';
-import 'package:test_layout/constants/enums.dart';
-import 'package:test_layout/data/models/user.dart';
+import '../../constants/enums.dart';
+import '../../data/models/user.dart';
 
 class UsersCubit extends Cubit<UsersState> {
   final UserRepository userRepository = UserRepository();
-  UsersCubit() : super(UsersState());
+  UsersCubit() : super(const UsersState());
   Gender? savedGender;
   String? savedNationality;
   final Map<String, String> nationalities = {
@@ -39,22 +39,23 @@ class UsersCubit extends Cubit<UsersState> {
     if (savedGender == null || savedNationality == null) {
       throw "Error loading - parameters not chosen!";
     }
-    state.currentUsers.removeAt(0);
+    var tempState = List.from(state.currentUsers);
+    tempState.removeAt(0);
     emit(state.copyWith(savedUsers: state.savedUsers, isLoading: true));
     try {
       final result = await userRepository.getUser(
           savedGender!, nationalities[savedNationality]!);
-      emit(state.copyWith(
-          isLoading: false, currentUsers: [...state.currentUsers, result]));
+      emit(state
+          .copyWith(isLoading: false, currentUsers: [...tempState, result]));
     } catch (e) {
       emit(state.copyWith(isLoading: false, error: e));
     }
   }
 
   void initLoadUser(Gender gender, String nationality) async {
+    emit(const UsersState(isLoading: true));
     savedGender = gender;
     savedNationality = nationality;
-    emit(UsersState(isLoading: true));
     List<User> a = [];
     for (int i = 0; i < bufferSize; i++) {
       try {
@@ -74,7 +75,8 @@ class UsersCubit extends Cubit<UsersState> {
   }
 
   void removeSavedUser(int index) {
-    state.savedUsers.removeAt(index);
-    emit(state.copyWith(savedUsers: state.savedUsers));
+    List<User> tempState = List.from(state.savedUsers);
+    tempState.removeAt(index);
+    emit(state.copyWith(savedUsers: tempState));
   }
 }
