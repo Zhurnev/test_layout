@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:test_layout/data/models/user.dart';
+
+import '../../data/models/user.dart';
 
 class UserCard extends StatelessWidget {
   final User user;
@@ -32,7 +33,7 @@ class UserCard extends StatelessWidget {
                   child: Column(
                     children: <Widget>[
                       Text(
-                        '${user.firstName} ${user.lastName}',
+                        '${user.name.first} ${user.name.last}',
                       ),
                       const SizedBox(
                         height: 10,

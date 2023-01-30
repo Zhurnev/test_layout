@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:test_layout/presentation/pages/error_page.dart';
-import 'package:test_layout/presentation/pages/login_page.dart';
-import 'package:test_layout/presentation/pages/main_page.dart';
-import 'package:test_layout/presentation/pages/saved_page.dart';
+
+import '../pages/error_page.dart';
+import '../pages/login_page.dart';
+import '../pages/main_page.dart';
+import '../pages/saved_page.dart';
 
 class AppRouter {
   Route onGenerateRoute(RouteSettings routeSettings) {
@@ -19,8 +20,7 @@ class AppRouter {
         return MaterialPageRoute(
             builder: (_) => const SavedPage(title: "Saved Page"));
       default:
-        return MaterialPageRoute(
-            builder: (_) => const ErrorPage(title: "Error Page"));
+        return MaterialPageRoute(builder: (_) => const ErrorPage());
     }
   }
 }
