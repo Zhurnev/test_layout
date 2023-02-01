@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:test_layout/app/constants/enums.dart';
 import 'package:test_layout/app/logic/cubits/users_cubit.dart';
+import 'package:test_layout/l10n/l10n.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({super.key, required this.title});
-  final String title;
+  const LoginPage({super.key});
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
@@ -40,11 +40,10 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          widget.title,
-        ),
+        title: Text(l10n.loginAppBarTitle),
       ),
       body: SingleChildScrollView(
         child: Form(
@@ -54,7 +53,7 @@ class _LoginPageState extends State<LoginPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text('Select nationality:'),
+                Text(l10n.nationalitySelectPrompt),
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 40),
                   child: DropdownButtonFormField<String>(
@@ -81,8 +80,8 @@ class _LoginPageState extends State<LoginPage> {
                     }),
                   ),
                 ),
-                const Text(
-                  'Select a gender:',
+                Text(
+                  l10n.genderSelectPrompt,
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 40),
@@ -91,9 +90,7 @@ class _LoginPageState extends State<LoginPage> {
                       Expanded(
                         child: RadioListTile<Gender>(
                           value: Gender.female,
-                          title: const Text(
-                            'Female',
-                          ),
+                          title: Text(l10n.femaleGender),
                           groupValue: gender,
                           onChanged: (value) {
                             setState(() {
@@ -105,9 +102,7 @@ class _LoginPageState extends State<LoginPage> {
                       Expanded(
                         child: RadioListTile<Gender>(
                           value: Gender.male,
-                          title: const Text(
-                            'Male',
-                          ),
+                          title: Text(l10n.maleGender),
                           groupValue: gender,
                           onChanged: (value) {
                             setState(() {
@@ -131,8 +126,8 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                         ),
                       ),
-                      child: const Text(
-                        'Login',
+                      child: Text(
+                        l10n.loginButton,
                       ),
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {

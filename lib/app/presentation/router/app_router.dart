@@ -10,17 +10,17 @@ class AppRouter {
     switch (routeSettings.name) {
       case '/':
         return MaterialPageRoute(
-          builder: (_) => const LoginPage(title: 'Login Page'),
+          builder: (_) => const LoginPage(),
         );
       case '/main':
         return MaterialPageRoute(
           builder: (_) {
-            return const MainPage(title: 'Main Page');
+            return const MainPage();
           },
         );
       case '/saved':
         return MaterialPageRoute(
-          builder: (_) => const SavedPage(title: 'Saved Page'),
+          builder: (_) => const SavedPage(),
         );
       default:
         return MaterialPageRoute(builder: (_) => const ErrorPage());

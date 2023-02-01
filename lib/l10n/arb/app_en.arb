@@ -1,7 +1,47 @@
 {
     "@@locale": "en",
-    "counterAppBarTitle": "Counter",
-    "@counterAppBarTitle": {
-        "description": "Text shown in the AppBar of the Counter Page"
+    "loginAppBarTitle": "Login Page",
+    "@loginAppBarTitle": {
+        "description": "Text shown in the AppBar of the Login Page"
+    }
+    ,"nationalitySelectPrompt": "Select nationality:",
+    "@nationalitySelectPrompt":{
+        "description":"Text shown above the nationality DropDownButton"
+    }
+    ,"genderSelectPrompt": "Select a gender:",
+    "@genderSelectPrompt":{
+        "description":"Text shown above the gender RadioListTiles"
+    }
+    ,"femaleGender": "Female",
+    "@emaleGender":{
+        "description":"Text shown inside the female gender RadioListTile"
+    }
+    ,"maleGender": "Male",
+    "@maleGender":{
+        "description":"Text shown inside the male gender RadioListTile"
+    }
+    ,"loginButton": "Login",
+    "@loginButton":{
+        "description":"Text shown inside the Login Button"
+    }
+    ,"mainAppBarTitle": "Main Page",
+    "@mainAppBarTitle": {
+        "description":"Text shown in the AppBar of the Main Page"
+    }
+    ,"savedAppBarTitle": "Saved Page",
+    "@savedAppBarTitle": {
+        "description":"Text shown in the AppBar of the Saved Page"
+    }
+    ,"noSaved": "No saved users yet!",
+    "@noSaved": {
+        "description":"Text shown in the Saved Page when there's no saved users"
+    }
+    ,"errorMessage": "Oops, something went wrong.",
+    "@errorMessage": {
+        "description":"Text shown in the Error Page"
+    }
+    ,"errorButton": "Go back",
+    "@errorButton": {
+        "description":"Text shown in the Error Page return Button"
     }
 }

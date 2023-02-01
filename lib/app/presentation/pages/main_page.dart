@@ -3,11 +3,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:test_layout/app/logic/cubits/users_cubit.dart';
 import 'package:test_layout/app/logic/cubits/users_state.dart';
+import 'package:test_layout/app/presentation/pages/error_page.dart';
 import 'package:test_layout/app/presentation/widgets/user_card.dart';
+import 'package:test_layout/l10n/l10n.dart';
 
 class MainPage extends StatefulWidget {
-  const MainPage({super.key, required this.title});
-  final String title;
+  const MainPage({super.key});
 
   @override
   State<MainPage> createState() => _MainPageState();
@@ -16,9 +17,10 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(l10n.mainAppBarTitle),
         actions: [
           IconButton(
             icon: const Icon(Icons.favorite_border_outlined),
@@ -33,9 +35,7 @@ class _MainPageState extends State<MainPage> {
               child: CircularProgressIndicator(),
             );
           } else if (state.error != null) {
-            return const Center(
-              child: Text('Error!'),
-            );
+            return const ErrorPage();
           } else {
             return Draggable(
               feedback: UserCard(user: state.currentUsers.first),

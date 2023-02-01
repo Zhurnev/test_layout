@@ -1,7 +1,15 @@
 {
     "@@locale": "es",
-    "counterAppBarTitle": "Contador",
-    "@counterAppBarTitle": {
-        "description": "Texto mostrado en la AppBar de la página del contador"
+    "loginAppBarTitle": "Login Page",
+    "@loginAppBarTitle": {
+        "description": "Text shown in the AppBar of the Login Page"
+    }
+    ,"mainAppBarTitle": "Main Page",
+    "@mainAppBarTitle": {
+        "description":"Text shown in the AppBar of the Main Page"
+    }
+    ,"savedAppBarTitle": "Saved Page",
+    "@savedAppBarTitle": {
+        "description":"Text shown in the AppBar of the Saved Page"
     }
 }

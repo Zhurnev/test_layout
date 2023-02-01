@@ -4,7 +4,7 @@ import 'package:test_layout/app/random_user_app.dart';
 
 void main() {
   group('App', () {
-    testWidgets('renders CounterPage', (tester) async {
+    testWidgets('renders LoginPage', (tester) async {
       await tester.pumpWidget(const RandomUserApp());
       expect(find.byType(LoginPage), findsOneWidget);
     });
