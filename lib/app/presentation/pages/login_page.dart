@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:test_layout/app/constants/enums.dart';
 import 'package:test_layout/app/logic/cubits/users_cubit.dart';
 import 'package:test_layout/l10n/l10n.dart';
+import 'package:test_layout/locator.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -131,7 +131,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
-                          BlocProvider.of<UsersCubit>(context)
+                          locator<UsersCubit>()
                               .initLoadUser(gender, nationality);
                           Navigator.of(context).pushNamed('/main');
                         }
