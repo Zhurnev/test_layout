@@ -1,9 +1,11 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:injectable/injectable.dart';
 import 'package:test_layout/app/constants/enums.dart';
 import 'package:test_layout/app/data/models/user.dart';
 import 'package:test_layout/app/data/repositories/user_repository.dart';
 import 'package:test_layout/app/logic/cubits/users_state.dart';
 
+@injectable
 class UsersCubit extends Cubit<UsersState> {
   UsersCubit() : super(const UsersState());
   final UserRepository userRepository = UserRepository();

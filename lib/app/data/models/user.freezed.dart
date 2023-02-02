@@ -22,11 +22,11 @@ User _$UserFromJson(Map<String, dynamic> json) {
 mixin _$User {
   Name get name => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
-  @JsonKey(name: "cell")
+  @JsonKey(name: 'cell')
   String get phone => throw _privateConstructorUsedError;
-  @JsonKey(name: "picture", fromJson: UserConverter.largePictureFromPicture)
+  @JsonKey(name: 'picture', fromJson: UserConverter.largePictureFromPicture)
   String get pictureLarge => throw _privateConstructorUsedError;
-  @JsonKey(name: "dob", fromJson: UserConverter.ageFromDob)
+  @JsonKey(name: 'dob', fromJson: UserConverter.ageFromDob)
   int get age => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -42,11 +42,11 @@ abstract class $UserCopyWith<$Res> {
   $Res call(
       {Name name,
       String email,
-      @JsonKey(name: "cell")
+      @JsonKey(name: 'cell')
           String phone,
-      @JsonKey(name: "picture", fromJson: UserConverter.largePictureFromPicture)
+      @JsonKey(name: 'picture', fromJson: UserConverter.largePictureFromPicture)
           String pictureLarge,
-      @JsonKey(name: "dob", fromJson: UserConverter.ageFromDob)
+      @JsonKey(name: 'dob', fromJson: UserConverter.ageFromDob)
           int age});
 
   $NameCopyWith<$Res> get name;
@@ -113,11 +113,11 @@ abstract class _$$_UserCopyWith<$Res> implements $UserCopyWith<$Res> {
   $Res call(
       {Name name,
       String email,
-      @JsonKey(name: "cell")
+      @JsonKey(name: 'cell')
           String phone,
-      @JsonKey(name: "picture", fromJson: UserConverter.largePictureFromPicture)
+      @JsonKey(name: 'picture', fromJson: UserConverter.largePictureFromPicture)
           String pictureLarge,
-      @JsonKey(name: "dob", fromJson: UserConverter.ageFromDob)
+      @JsonKey(name: 'dob', fromJson: UserConverter.ageFromDob)
           int age});
 
   @override
@@ -171,11 +171,11 @@ class _$_User implements _User {
   const _$_User(
       {required this.name,
       required this.email,
-      @JsonKey(name: "cell")
+      @JsonKey(name: 'cell')
           required this.phone,
-      @JsonKey(name: "picture", fromJson: UserConverter.largePictureFromPicture)
+      @JsonKey(name: 'picture', fromJson: UserConverter.largePictureFromPicture)
           required this.pictureLarge,
-      @JsonKey(name: "dob", fromJson: UserConverter.ageFromDob)
+      @JsonKey(name: 'dob', fromJson: UserConverter.ageFromDob)
           required this.age});
 
   factory _$_User.fromJson(Map<String, dynamic> json) => _$$_UserFromJson(json);
@@ -185,13 +185,13 @@ class _$_User implements _User {
   @override
   final String email;
   @override
-  @JsonKey(name: "cell")
+  @JsonKey(name: 'cell')
   final String phone;
   @override
-  @JsonKey(name: "picture", fromJson: UserConverter.largePictureFromPicture)
+  @JsonKey(name: 'picture', fromJson: UserConverter.largePictureFromPicture)
   final String pictureLarge;
   @override
-  @JsonKey(name: "dob", fromJson: UserConverter.ageFromDob)
+  @JsonKey(name: 'dob', fromJson: UserConverter.ageFromDob)
   final int age;
 
   @override
@@ -235,11 +235,11 @@ abstract class _User implements User {
   const factory _User(
       {required final Name name,
       required final String email,
-      @JsonKey(name: "cell")
+      @JsonKey(name: 'cell')
           required final String phone,
-      @JsonKey(name: "picture", fromJson: UserConverter.largePictureFromPicture)
+      @JsonKey(name: 'picture', fromJson: UserConverter.largePictureFromPicture)
           required final String pictureLarge,
-      @JsonKey(name: "dob", fromJson: UserConverter.ageFromDob)
+      @JsonKey(name: 'dob', fromJson: UserConverter.ageFromDob)
           required final int age}) = _$_User;
 
   factory _User.fromJson(Map<String, dynamic> json) = _$_User.fromJson;
@@ -249,13 +249,13 @@ abstract class _User implements User {
   @override
   String get email;
   @override
-  @JsonKey(name: "cell")
+  @JsonKey(name: 'cell')
   String get phone;
   @override
-  @JsonKey(name: "picture", fromJson: UserConverter.largePictureFromPicture)
+  @JsonKey(name: 'picture', fromJson: UserConverter.largePictureFromPicture)
   String get pictureLarge;
   @override
-  @JsonKey(name: "dob", fromJson: UserConverter.ageFromDob)
+  @JsonKey(name: 'dob', fromJson: UserConverter.ageFromDob)
   int get age;
   @override
   @JsonKey(ignore: true)
