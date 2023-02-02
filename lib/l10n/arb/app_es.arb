@@ -1,15 +1,47 @@
 {
     "@@locale": "es",
-    "loginAppBarTitle": "Login Page",
+    "loginAppBarTitle": "Página de Inicio de Sesión",
     "@loginAppBarTitle": {
-        "description": "Text shown in the AppBar of the Login Page"
+    "description": "Texto mostrado en la barra de aplicaciones de la página de inicio de sesión"
     }
-    ,"mainAppBarTitle": "Main Page",
+    ,"nationalitySelectPrompt": "Seleccione nacionalidad:",
+    "@nationalitySelectPrompt":{
+    "description":"Texto mostrado encima del botón desplegable de nacionalidad"
+    }
+    ,"genderSelectPrompt": "Seleccione un género:",
+    "@genderSelectPrompt":{
+    "description":"Texto mostrado encima de los azulejos de la lista de radio de género"
+    }
+    ,"femaleGender": "Femenino",
+    "@emaleGender":{
+    "description":"Texto mostrado dentro del azulejo de género femenino"
+    }
+    ,"maleGender": "Masculino",
+    "@maleGender":{
+    "description":"Texto mostrado dentro del azulejo de género masculino"
+    }
+    ,"loginButton": "Iniciar sesión",
+    "@loginButton":{
+    "description":"Texto mostrado dentro del botón de inicio de sesión"
+    }
+    ,"mainAppBarTitle": "Página principal",
     "@mainAppBarTitle": {
-        "description":"Text shown in the AppBar of the Main Page"
+    "description":"Texto mostrado en la barra de aplicaciones de la página principal"
     }
-    ,"savedAppBarTitle": "Saved Page",
+    ,"savedAppBarTitle": "Página guardada",
     "@savedAppBarTitle": {
-        "description":"Text shown in the AppBar of the Saved Page"
+    "description":"Texto mostrado en la barra de aplicaciones de la página guardada"
     }
-}
+    ,"noSaved": "¡Aún no hay usuarios guardados!",
+    "@noSaved": {
+    "description":"Texto mostrado en la página guardada cuando no hay usuarios guardados"
+    }
+    ,"errorMessage": "Vaya, algo salió mal.",
+    "@errorMessage": {
+    "description":"Texto mostrado en la página de error"
+    }
+    ,"errorButton": "Volver atrás",
+    "@errorButton": {
+    "description":"Texto mostrado en el botón de regreso de la página de error"
+    }
+    }
