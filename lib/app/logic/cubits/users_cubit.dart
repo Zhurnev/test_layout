@@ -5,7 +5,7 @@ import 'package:test_layout/app/data/models/user.dart';
 import 'package:test_layout/app/data/repositories/user_repository.dart';
 import 'package:test_layout/app/logic/cubits/users_state.dart';
 
-@injectable
+@LazySingleton()
 class UsersCubit extends Cubit<UsersState> {
   UsersCubit() : super(const UsersState());
   final UserRepository userRepository = UserRepository();
