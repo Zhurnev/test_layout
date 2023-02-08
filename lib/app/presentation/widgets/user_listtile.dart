@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:test_layout/app/data/models/user.dart';
 import 'package:test_layout/app/logic/cubits/users_cubit.dart';
-import 'package:test_layout/locator.dart';
+import 'package:test_layout/injectable/get_it.dart';
 
 class UserListTile extends StatelessWidget {
   const UserListTile({super.key, required this.user, required this.index});
@@ -21,7 +21,7 @@ class UserListTile extends StatelessWidget {
       trailing: IconButton(
         icon: const Icon(Icons.delete),
         onPressed: () {
-          locator<UsersCubit>().removeSavedUser(index);
+          getIt<UsersCubit>().removeSavedUser(index);
         },
       ),
     );

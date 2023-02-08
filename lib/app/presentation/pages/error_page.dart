@@ -14,9 +14,7 @@ class ErrorPage extends StatelessWidget {
           children: <Widget>[
             Text(l10n.errorMessage),
             ElevatedButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
+              onPressed: () => Navigator.pop(context),
               child: Text(l10n.errorButton),
             ),
           ],
