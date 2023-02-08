@@ -4,8 +4,8 @@ import 'package:test_layout/app/logic/cubits/users_cubit.dart';
 import 'package:test_layout/app/logic/cubits/users_state.dart';
 import 'package:test_layout/app/presentation/pages/error_page.dart';
 import 'package:test_layout/app/presentation/widgets/user_card.dart';
+import 'package:test_layout/injectable/get_it.dart';
 import 'package:test_layout/l10n/l10n.dart';
-import 'package:test_layout/locator.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -41,9 +41,9 @@ class _MainPageState extends State<MainPage> {
               feedback: UserCard(user: state.currentUsers.first),
               onDragEnd: (details) {
                 if (details.velocity.pixelsPerSecond.dx > 0) {
-                  locator<UsersCubit>().saveUser();
+                  getIt<UsersCubit>().saveUser();
                 } else if (details.velocity.pixelsPerSecond.dx < 0) {
-                  locator<UsersCubit>().loadUser();
+                  getIt<UsersCubit>().loadUser();
                 }
               },
               childWhenDragging: UserCard(user: state.currentUsers[1]),

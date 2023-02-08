@@ -16,6 +16,8 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$UsersState {
+  Gender? get savedGender => throw _privateConstructorUsedError;
+  String? get savedNationality => throw _privateConstructorUsedError;
   dynamic get isLoading => throw _privateConstructorUsedError;
   List<User> get savedUsers => throw _privateConstructorUsedError;
   List<User> get currentUsers => throw _privateConstructorUsedError;
@@ -33,7 +35,9 @@ abstract class $UsersStateCopyWith<$Res> {
       _$UsersStateCopyWithImpl<$Res, UsersState>;
   @useResult
   $Res call(
-      {dynamic isLoading,
+      {Gender? savedGender,
+      String? savedNationality,
+      dynamic isLoading,
       List<User> savedUsers,
       List<User> currentUsers,
       Object? error});
@@ -52,12 +56,22 @@ class _$UsersStateCopyWithImpl<$Res, $Val extends UsersState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? savedGender = freezed,
+    Object? savedNationality = freezed,
     Object? isLoading = freezed,
     Object? savedUsers = null,
     Object? currentUsers = null,
     Object? error = freezed,
   }) {
     return _then(_value.copyWith(
+      savedGender: freezed == savedGender
+          ? _value.savedGender
+          : savedGender // ignore: cast_nullable_to_non_nullable
+              as Gender?,
+      savedNationality: freezed == savedNationality
+          ? _value.savedNationality
+          : savedNationality // ignore: cast_nullable_to_non_nullable
+              as String?,
       isLoading: freezed == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
@@ -84,7 +98,9 @@ abstract class _$$_UsersStateCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {dynamic isLoading,
+      {Gender? savedGender,
+      String? savedNationality,
+      dynamic isLoading,
       List<User> savedUsers,
       List<User> currentUsers,
       Object? error});
@@ -101,12 +117,22 @@ class __$$_UsersStateCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? savedGender = freezed,
+    Object? savedNationality = freezed,
     Object? isLoading = freezed,
     Object? savedUsers = null,
     Object? currentUsers = null,
     Object? error = freezed,
   }) {
     return _then(_$_UsersState(
+      savedGender: freezed == savedGender
+          ? _value.savedGender
+          : savedGender // ignore: cast_nullable_to_non_nullable
+              as Gender?,
+      savedNationality: freezed == savedNationality
+          ? _value.savedNationality
+          : savedNationality // ignore: cast_nullable_to_non_nullable
+              as String?,
       isLoading: freezed == isLoading ? _value.isLoading! : isLoading,
       savedUsers: null == savedUsers
           ? _value._savedUsers
@@ -125,13 +151,19 @@ class __$$_UsersStateCopyWithImpl<$Res>
 
 class _$_UsersState implements _UsersState {
   const _$_UsersState(
-      {this.isLoading = false,
+      {this.savedGender,
+      this.savedNationality,
+      this.isLoading = true,
       final List<User> savedUsers = const [],
       final List<User> currentUsers = const [],
       this.error})
       : _savedUsers = savedUsers,
         _currentUsers = currentUsers;
 
+  @override
+  final Gender? savedGender;
+  @override
+  final String? savedNationality;
   @override
   @JsonKey()
   final dynamic isLoading;
@@ -158,7 +190,7 @@ class _$_UsersState implements _UsersState {
 
   @override
   String toString() {
-    return 'UsersState(isLoading: $isLoading, savedUsers: $savedUsers, currentUsers: $currentUsers, error: $error)';
+    return 'UsersState(savedGender: $savedGender, savedNationality: $savedNationality, isLoading: $isLoading, savedUsers: $savedUsers, currentUsers: $currentUsers, error: $error)';
   }
 
   @override
@@ -166,6 +198,10 @@ class _$_UsersState implements _UsersState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_UsersState &&
+            (identical(other.savedGender, savedGender) ||
+                other.savedGender == savedGender) &&
+            (identical(other.savedNationality, savedNationality) ||
+                other.savedNationality == savedNationality) &&
             const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
             const DeepCollectionEquality()
                 .equals(other._savedUsers, _savedUsers) &&
@@ -177,6 +213,8 @@ class _$_UsersState implements _UsersState {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      savedGender,
+      savedNationality,
       const DeepCollectionEquality().hash(isLoading),
       const DeepCollectionEquality().hash(_savedUsers),
       const DeepCollectionEquality().hash(_currentUsers),
@@ -191,11 +229,17 @@ class _$_UsersState implements _UsersState {
 
 abstract class _UsersState implements UsersState {
   const factory _UsersState(
-      {final dynamic isLoading,
+      {final Gender? savedGender,
+      final String? savedNationality,
+      final dynamic isLoading,
       final List<User> savedUsers,
       final List<User> currentUsers,
       final Object? error}) = _$_UsersState;
 
+  @override
+  Gender? get savedGender;
+  @override
+  String? get savedNationality;
   @override
   dynamic get isLoading;
   @override

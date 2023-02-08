@@ -1,17 +1,15 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
-import 'package:test_layout/app/constants/enums.dart';
 import 'package:test_layout/app/data/models/user.dart';
 import 'package:test_layout/app/data/repositories/user_repository.dart';
 import 'package:test_layout/app/logic/cubits/users_state.dart';
+import 'package:test_layout/app/utility/enums.dart';
+import 'package:test_layout/injectable/get_it.dart';
 
-@LazySingleton()
+@lazySingleton
 class UsersCubit extends Cubit<UsersState> {
   UsersCubit() : super(const UsersState());
-  final UserRepository userRepository = UserRepository();
-  Gender? savedGender;
-  String? savedNationality;
-  final Map<String, String> nationalities = {
+  final Map<String, String> _nationalities = {
     'Australia 🇦🇺': 'AU',
     'Brazil 🇧🇷': 'BR',
     'Canada 🇨🇦': 'CA',
@@ -35,18 +33,18 @@ class UsersCubit extends Cubit<UsersState> {
     'USA 🇺🇸': 'US',
   };
 
-  static const int bufferSize = 2;
+  static const int _bufferSize = 2;
 
   Future<void> loadUser() async {
-    if (savedGender == null || savedNationality == null) {
+    if (state.savedGender == null || state.savedNationality == null) {
       throw Exception('Error loading - parameters not chosen!');
     }
     final tempState = List<User>.from(state.currentUsers)..removeAt(0);
     emit(state.copyWith(savedUsers: state.savedUsers, isLoading: true));
     try {
-      final result = await userRepository.getUser(
-        savedGender!,
-        nationalities[savedNationality]!,
+      final result = await getIt<UserRepository>().getUser(
+        state.savedGender!,
+        _nationalities[state.savedNationality]!,
       );
       emit(
         state.copyWith(isLoading: false, currentUsers: [...tempState, result]),
@@ -57,20 +55,24 @@ class UsersCubit extends Cubit<UsersState> {
   }
 
   Future<void> initLoadUser(Gender gender, String nationality) async {
-    emit(const UsersState(isLoading: true));
-    savedGender = gender;
-    savedNationality = nationality;
+    emit(
+      state.copyWith(
+        savedGender: gender,
+        savedNationality: nationality,
+      ),
+    );
     final a = <User>[];
-    for (var i = 0; i < bufferSize; i++) {
+    for (var i = 0; i < _bufferSize; i++) {
       try {
         a.add(
-          await userRepository.getUser(gender, nationalities[nationality]!),
+          await getIt<UserRepository>()
+              .getUser(gender, _nationalities[nationality]!),
         );
       } catch (e) {
         emit(UsersState(isLoading: false, error: e));
       }
     }
-    emit(UsersState(isLoading: false, currentUsers: a));
+    emit(state.copyWith(isLoading: false, currentUsers: a));
   }
 
   void saveUser() {
