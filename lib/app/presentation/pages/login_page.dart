@@ -36,7 +36,7 @@ class _LoginPageState extends State<LoginPage> {
     'Ukraine 🇺🇦',
     'United States 🇺🇸',
   ];
-  late String nationality = nationality[0];
+  late String nationality = nationalities[0];
 
   @override
   Widget build(BuildContext context) {
